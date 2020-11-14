@@ -13,8 +13,10 @@ public class UpdateItemCommand {
         }
     }
 
-    public void decrementQuality() {
-        item.quality--;
+    public void lowerQuality() {
+        if(item.quality > 0){
+            item.quality--;
+        }
     }
 
     public void decrementSellIn() {
@@ -23,10 +25,6 @@ public class UpdateItemCommand {
 
     public boolean sellByDateHasPassed() {
         return item.sellIn < 0;
-    }
-
-    public int getQuality() {
-        return item.quality;
     }
 
     public void dropQualityToZero() {

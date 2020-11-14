@@ -23,7 +23,7 @@ public class UpdateItemCommandTest {
 
         UpdateItemCommand updateItemCommand = new UpdateItemCommand(item);
 
-        updateItemCommand.decrementQuality();
+        updateItemCommand.lowerQuality();
 
         assertThat(item.quality).isEqualTo(0);
     }
@@ -75,5 +75,15 @@ public class UpdateItemCommandTest {
         updateItemCommand.raiseQuality();
 
         assertThat(item.quality).isEqualTo(50);
+    }
+
+    @Test
+    void qualityOfAnItemIsNeverNegative() {
+        Item item = new Item("bla", 0, 0);
+
+        UpdateItemCommand updateItemCommand = new UpdateItemCommand(item);
+        updateItemCommand.lowerQuality();
+
+        assertThat(item.quality).isEqualTo(0);
     }
 }

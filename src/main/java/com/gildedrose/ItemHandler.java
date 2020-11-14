@@ -6,9 +6,9 @@ public interface ItemHandler {
     }
 
     default void updateQuality(UpdateItemCommand updateItemCommand) {
-        decreaseQuality(updateItemCommand);
+        updateItemCommand.lowerQuality();
         if (updateItemCommand.sellByDateHasPassed()) {
-            decreaseQuality(updateItemCommand);
+            updateItemCommand.lowerQuality();
         }
     }
 
@@ -17,9 +17,4 @@ public interface ItemHandler {
         updateQuality(updateItemCommand);
     }
 
-    private void decreaseQuality(UpdateItemCommand updateItemCommand) {
-        if (updateItemCommand.getQuality() > 0) {
-            updateItemCommand.decrementQuality();
-        }
-    }
 }
