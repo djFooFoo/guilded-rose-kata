@@ -93,4 +93,19 @@ class GildedRoseTest {
 
         assertThat(item.getQuality()).isEqualTo(0);
     }
+
+    @Test
+    void givenBackStagePassQualityNeverRaisesAbove50(){
+        Item[] items = new Item[] {
+                new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50)
+        };
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        Item item = app.getItem(0);
+
+        assertThat(item.getQuality()).isEqualTo(50);
+
+    }
 }
