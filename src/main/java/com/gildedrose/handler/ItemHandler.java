@@ -1,4 +1,6 @@
-package com.gildedrose;
+package com.gildedrose.handler;
+
+import com.gildedrose.UpdateItemCommand;
 
 public interface ItemHandler {
     default void updateSellIn(UpdateItemCommand updateItemCommand) {

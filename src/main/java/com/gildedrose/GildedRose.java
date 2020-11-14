@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.handler.ItemHandler;
+
 class GildedRose {
     public Item[] items;
 
@@ -9,27 +11,10 @@ class GildedRose {
 
     public void updateItems() {
         for (Item item : items) {
-            updateItem(item);
+            ItemHandler itemHandler = ItemHandlerFactory.getItemHandlerForName(item.name);
+            UpdateItemCommand updateItemCommand = new UpdateItemCommand(item);
+            itemHandler.execute(updateItemCommand);
         }
     }
 
-    public void updateItem(Item item) {
-        if ("Aged Brie".equals(item.name)) {
-            ItemHandler itemHandler = new AgedBrieItemHandler();
-            UpdateItemCommand itemDecorator = new UpdateItemCommand(item);
-            itemHandler.execute(itemDecorator);
-        } else if ("Sulfuras, Hand of Ragnaros".equals(item.name)) {
-            ItemHandler itemHandler = new LegendaryItemHandler();
-            UpdateItemCommand itemDecorator = new UpdateItemCommand(item);
-            itemHandler.execute(itemDecorator);
-        } else if ("Backstage passes to a TAFKAL80ETC concert".equals(item.name)) {
-            ItemHandler itemHandler = new BackStageItemHandler();
-            UpdateItemCommand itemDecorator = new UpdateItemCommand(item);
-            itemHandler.execute(itemDecorator);
-        } else {
-            ItemHandler itemHandler = new ItemHandler() {};
-            UpdateItemCommand itemDecorator = new UpdateItemCommand(item);
-            itemHandler.execute(itemDecorator);
-        }
-    }
 }

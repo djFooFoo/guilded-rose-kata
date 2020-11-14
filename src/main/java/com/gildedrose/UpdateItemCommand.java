@@ -3,7 +3,7 @@ package com.gildedrose;
 public class UpdateItemCommand {
     private final Item item;
 
-    UpdateItemCommand(Item item) {
+    public UpdateItemCommand(Item item) {
         this.item = item;
     }
 

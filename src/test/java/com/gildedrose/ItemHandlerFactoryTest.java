@@ -1,5 +1,9 @@
 package com.gildedrose;
 
+import com.gildedrose.handler.AgedBrieItemHandler;
+import com.gildedrose.handler.BackStageItemHandler;
+import com.gildedrose.handler.ItemHandler;
+import com.gildedrose.handler.LegendaryItemHandler;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

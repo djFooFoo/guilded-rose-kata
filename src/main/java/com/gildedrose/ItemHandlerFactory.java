@@ -1,5 +1,10 @@
 package com.gildedrose;
 
+import com.gildedrose.handler.AgedBrieItemHandler;
+import com.gildedrose.handler.BackStageItemHandler;
+import com.gildedrose.handler.ItemHandler;
+import com.gildedrose.handler.LegendaryItemHandler;
+
 import java.util.HashMap;
 import java.util.Map;
 

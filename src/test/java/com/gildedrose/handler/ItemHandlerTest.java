@@ -1,5 +1,7 @@
-package com.gildedrose;
+package com.gildedrose.handler;
 
+import com.gildedrose.Item;
+import com.gildedrose.UpdateItemCommand;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
