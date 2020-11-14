@@ -33,4 +33,18 @@ class ItemTest {
 
         assertThat(item.getQuality()).isEqualTo(0);
     }
+
+    @Test
+    void sellByDateHasPassedWhenSellInIsNegative() {
+        Item item = new Item("item1", -1, 0);
+
+        assertThat(item.sellByDateHasPassed()).isEqualTo(true);
+    }
+
+    @Test
+    void sellByDateHasPassedWhenSellInIsZeroOrHigher() {
+        Item item = new Item("item1", 0, 0);
+
+        assertThat(item.sellByDateHasPassed()).isEqualTo(false);
+    }
 }

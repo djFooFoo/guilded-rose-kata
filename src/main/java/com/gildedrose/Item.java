@@ -34,6 +34,10 @@ public class Item {
         return this.sellIn;
     }
 
+    public boolean sellByDateHasPassed() {
+        return this.sellIn < 0;
+    }
+
     void decrementSellIn() {
         this.sellIn -= 1;
     }
