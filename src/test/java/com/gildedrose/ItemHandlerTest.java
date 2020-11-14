@@ -15,4 +15,15 @@ class ItemHandlerTest {
 
         assertThat(item.getSellIn()).isEqualTo(18);
     }
+
+    @Test
+    void givenItemQualityDecreases() {
+        Item item = new Item("an item", 19, 22);
+
+        ItemHandler itemHandler = new ItemHandler(){};
+
+        itemHandler.update(item);
+
+        assertThat(item.getQuality()).isEqualTo(21);
+    }
 }
