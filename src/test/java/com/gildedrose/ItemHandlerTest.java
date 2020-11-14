@@ -38,4 +38,14 @@ class ItemHandlerTest {
         assertThat(item.getQuality()).isEqualTo(20);
     }
 
+    @Test
+    void givenItemQualityDecreasesNeverBelowZero() {
+        Item item = new Item("an item", -1, 0);
+
+        ItemHandler itemHandler = new ItemHandler(){};
+
+        itemHandler.update(item);
+
+        assertThat(item.getQuality()).isEqualTo(0);
+    }
 }
