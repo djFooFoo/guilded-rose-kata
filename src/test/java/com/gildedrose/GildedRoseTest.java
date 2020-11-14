@@ -14,7 +14,7 @@ class GildedRoseTest {
         };
         GildedRose app = new GildedRose(items);
 
-        app.updateQuality();
+        app.updateItems();
 
         Item item1 = app.getItem(0);
         assertThat(item1.quality).isEqualTo(1);

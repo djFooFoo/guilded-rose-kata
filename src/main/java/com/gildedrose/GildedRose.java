@@ -11,13 +11,13 @@ class GildedRose {
         return items[zeroBasedIndex];
     }
 
-    public void updateQuality() {
+    public void updateItems() {
         for (Item item : items) {
-            updateQualityItem(item);
+            updateItem(item);
         }
     }
 
-    public void updateQualityItem(Item item) {
+    public void updateItem(Item item) {
         if("Aged Brie".equals(item.name)){
             ItemHandler itemHandler = new AgedBrieItemHandler();
             itemHandler.update(item);
