@@ -4,6 +4,12 @@ public class AgedBrieItemHandler implements ItemHandler {
     @Override
     public void update(Item item) {
         item.decrementSellIn();
-        item.incrementQuality();
+        raiseQuality(item);
+    }
+
+    private void raiseQuality(Item item) {
+        if (item.getQuality() < 50) {
+            item.incrementQuality();
+        }
     }
 }

@@ -17,7 +17,7 @@ class AgedBrieItemHandlerTest {
     }
 
     @Test
-    void givenAgedBrieQualityIncrements() {
+    void givenAgedBrieQualityRaisesByOne() {
         Item item = new Item("Aged Brie", 30, 40);
 
         ItemHandler itemHandler = new AgedBrieItemHandler();
@@ -25,5 +25,16 @@ class AgedBrieItemHandlerTest {
         itemHandler.update(item);
 
         assertThat(item.getQuality()).isEqualTo(41);
+    }
+
+    @Test
+    void givenAgedBrieQualityNeverRaisesAbove50() {
+        Item item = new Item("Aged Brie", 30, 50);
+
+        ItemHandler itemHandler = new AgedBrieItemHandler();
+
+        itemHandler.update(item);
+
+        assertThat(item.getQuality()).isEqualTo(50);
     }
 }
