@@ -38,6 +38,10 @@ public class Item {
         return this.sellIn < 0;
     }
 
+    public boolean hasName(String name) {
+        return name.equals(this.name);
+    }
+
     void decrementSellIn() {
         this.sellIn -= 1;
     }

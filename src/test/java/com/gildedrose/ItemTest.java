@@ -47,4 +47,20 @@ class ItemTest {
 
         assertThat(item.sellByDateHasPassed()).isEqualTo(false);
     }
+
+    @Test
+    void hasNameReturnsTrueWhenNamesAreEqual() {
+        String givenName = "name";
+        Item item = new Item(givenName, 0, 0);
+
+        assertThat(item.hasName(givenName)).isEqualTo(true);
+    }
+
+    @Test
+    void hasNameReturnsFalseWhenNamesAreNotEqual() {
+        String givenName = "name";
+        Item item = new Item(givenName, 0, 0);
+
+        assertThat(item.hasName("differentName")).isEqualTo(false);
+    }
 }
