@@ -29,7 +29,7 @@ class ItemTest {
     void resetQualityResetsToZero() {
         Item item = new Item("item1", 0, 3);
 
-        item.resetQuality();
+        item.dropQualityToZero();
 
         assertThat(item.getQuality()).isEqualTo(0);
     }

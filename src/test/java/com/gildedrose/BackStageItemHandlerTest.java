@@ -45,4 +45,14 @@ class BackStageItemHandlerTest {
 
         assertThat(item.getQuality()).isEqualTo(25);
     }
+
+    @Test
+    void givenBackStagePassQualityWithSellByDateHasPassedDropsTo0() {
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 22);
+        ItemHandler itemHandler = new BackStageItemHandler();
+
+        itemHandler.update(item);
+
+        assertThat(item.getQuality()).isEqualTo(0);
+    }
 }

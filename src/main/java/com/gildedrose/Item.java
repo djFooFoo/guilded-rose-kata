@@ -22,7 +22,7 @@ public class Item {
         this.quality -= 1;
     }
 
-    void resetQuality() {
+    void dropQualityToZero() {
         this.quality = 0;
     }
 

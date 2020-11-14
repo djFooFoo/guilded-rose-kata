@@ -11,5 +11,8 @@ public class BackStageItemHandler implements ItemHandler {
         if (item.getSellIn() <= 5) {
             item.incrementQuality();
         }
+        if (item.sellByDateHasPassed()){
+            item.dropQualityToZero();
+        }
     }
 }
