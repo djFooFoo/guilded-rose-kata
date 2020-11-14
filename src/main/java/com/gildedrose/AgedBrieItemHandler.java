@@ -5,7 +5,7 @@ public class AgedBrieItemHandler implements ItemHandler {
     public void updateQuality(UpdateItemCommand updateItemCommand) {
         updateItemCommand.raiseQuality();
 
-        if(updateItemCommand.sellByDateHasPassed()){
+        if(updateItemCommand.sellInDateHasPassed()){
             updateItemCommand.raiseQuality();
         }
     }

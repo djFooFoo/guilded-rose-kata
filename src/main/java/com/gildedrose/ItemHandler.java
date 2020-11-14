@@ -2,12 +2,12 @@ package com.gildedrose;
 
 public interface ItemHandler {
     default void updateSellIn(UpdateItemCommand updateItemCommand) {
-        updateItemCommand.decrementSellIn();
+        updateItemCommand.lowerSellByDate();
     }
 
     default void updateQuality(UpdateItemCommand updateItemCommand) {
         updateItemCommand.lowerQuality();
-        if (updateItemCommand.sellByDateHasPassed()) {
+        if (updateItemCommand.sellInDateHasPassed()) {
             updateItemCommand.lowerQuality();
         }
     }

@@ -29,32 +29,32 @@ public class UpdateItemCommandTest {
     }
 
     @Test
-    void decrementSellInLowersSellInByOne() {
+    void lowerSellByDateLowersSellInDateByOne() {
         Item item = new Item("bla", 4, 1);
 
         UpdateItemCommand updateItemCommand = new UpdateItemCommand(item);
 
-        updateItemCommand.decrementSellIn();
+        updateItemCommand.lowerSellByDate();
 
         assertThat(item.sellIn).isEqualTo(3);
     }
 
     @Test
-    void sellByDateHasPassedReturnsTrueIfSellInIsLowerThanZero() {
+    void sellInDateHasPassedReturnsTrueIfSellInIsLowerThanZero() {
         Item item = new Item("bla", -1, 1);
 
         UpdateItemCommand updateItemCommand = new UpdateItemCommand(item);
 
-        assertThat(updateItemCommand.sellByDateHasPassed()).isEqualTo(true);
+        assertThat(updateItemCommand.sellInDateHasPassed()).isEqualTo(true);
     }
 
     @Test
-    void sellByDateHasPassedReturnsFalseIfSellInIsZeroOrHigher() {
+    void sellInDateHasPassedReturnsFalseIfSellInIsZeroOrHigher() {
         Item item = new Item("bla", 0, 1);
 
         UpdateItemCommand updateItemCommand = new UpdateItemCommand(item);
 
-        assertThat(updateItemCommand.sellByDateHasPassed()).isEqualTo(false);
+        assertThat(updateItemCommand.sellInDateHasPassed()).isEqualTo(false);
     }
 
     @Test

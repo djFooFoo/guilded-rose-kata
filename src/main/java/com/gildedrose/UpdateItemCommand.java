@@ -19,11 +19,11 @@ public class UpdateItemCommand {
         }
     }
 
-    public void decrementSellIn() {
+    public void lowerSellByDate() {
         item.sellIn--;
     }
 
-    public boolean sellByDateHasPassed() {
+    public boolean sellInDateHasPassed() {
         return item.sellIn < 0;
     }
 
@@ -31,7 +31,7 @@ public class UpdateItemCommand {
         item.quality = 0;
     }
 
-    public int getSellIn() {
+    public int getSellByDate() {
         return item.sellIn;
     }
 }

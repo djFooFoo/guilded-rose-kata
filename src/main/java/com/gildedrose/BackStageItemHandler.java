@@ -5,15 +5,15 @@ public class BackStageItemHandler implements ItemHandler {
     public void updateQuality(UpdateItemCommand updateItemCommand) {
         updateItemCommand.raiseQuality();
 
-        if (updateItemCommand.getSellIn() <= 10) {
+        if (updateItemCommand.getSellByDate() <= 10) {
             updateItemCommand.raiseQuality();
         }
 
-        if (updateItemCommand.getSellIn() <= 5) {
+        if (updateItemCommand.getSellByDate() <= 5) {
             updateItemCommand.raiseQuality();
         }
 
-        if (updateItemCommand.sellByDateHasPassed()){
+        if (updateItemCommand.sellInDateHasPassed()){
             updateItemCommand.dropQualityToZero();
         }
     }
