@@ -2,8 +2,7 @@ package com.gildedrose;
 
 public class BackStageItemHandler implements ItemHandler {
     @Override
-    public void update(Item item) {
-        item.decrementSellIn();
+    public void updateQuality(Item item) {
         raiseQuality(item);
 
         if (item.getSellIn() <= 10) {
