@@ -26,4 +26,16 @@ class ItemHandlerTest {
 
         assertThat(item.getQuality()).isEqualTo(21);
     }
+
+    @Test
+    void givenItemQualityAndSellByDateHasPassedDecreasesTwiceAsFast() {
+        Item item = new Item("an item", -1, 22);
+
+        ItemHandler itemHandler = new ItemHandler(){};
+
+        itemHandler.update(item);
+
+        assertThat(item.getQuality()).isEqualTo(20);
+    }
+
 }
