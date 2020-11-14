@@ -23,4 +23,74 @@ class GildedRoseTest {
         assertThat(item2.quality).isEqualTo(3);
         assertThat(item2.sellIn).isEqualTo(2);
     }
+
+    @Test
+    void givenPositiveSelInAgedBrieQualityRaisesByOne() {
+        Item[] items = new Item[] {
+                new Item("Aged Brie", 30, 40)
+        };
+
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        Item item = app.getItem(0);
+        assertThat(item.quality).isEqualTo(41);
+    }
+
+    @Test
+    void givenPositiveSelInAgedBrieQualityNeverGoesAbove50() {
+        Item[] items = new Item[] {
+                new Item("Aged Brie", 30, 50)
+        };
+
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        Item item = app.getItem(0);
+        assertThat(item.quality).isEqualTo(50);
+    }
+
+    @Test
+    void givenNegativeOrZeroSelInAgedBrieItemQualityIncreasesTwiceAsFast() {
+        Item[] items = new Item[] {
+                new Item("Aged Brie", 0, 40)
+        };
+
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        Item item = app.getItem(0);
+        assertThat(item.quality).isEqualTo(42);
+    }
+
+    @Test
+    void givenNegativeOrZeroSelInAgedBrieItemQualityNeverGoesAbove50() {
+        Item[] items = new Item[] {
+                new Item("Aged Brie", 0, 49)
+        };
+
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        Item item = app.getItem(0);
+        assertThat(item.quality).isEqualTo(50);
+    }
+
+    @Test
+    void agedBrieSellInDecreasesByOne() {
+        Item[] items = new Item[] {
+                new Item("Aged Brie", 23, 44)
+        };
+
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        Item item = app.getItem(0);
+        assertThat(item.sellIn).isEqualTo(22);
+    }
 }
