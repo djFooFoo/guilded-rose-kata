@@ -15,4 +15,15 @@ class LegendaryItemHandlerTest {
 
         assertThat(item.sellIn).isEqualTo(19);
     }
+
+    @Test
+    void givenLegendaryItemQualityDoesNotChange() {
+        Item item = new Item("Sulfuras, Hand of Ragnaros", 19, 80);
+
+        ItemHandler itemHandler = new LegendaryItemHandler();
+
+        itemHandler.update(item);
+
+        assertThat(item.getQuality()).isEqualTo(80);
+    }
 }
