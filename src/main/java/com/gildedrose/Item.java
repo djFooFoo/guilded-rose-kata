@@ -30,6 +30,14 @@ public class Item {
         return this.quality;
     }
 
+    public int getSellIn() {
+        return this.sellIn;
+    }
+
+    void decrementSellIn() {
+        this.sellIn -= 1;
+    }
+
     @Override
     public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
