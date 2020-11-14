@@ -18,13 +18,13 @@ class GildedRose {
     }
 
     public void updateItem(Item item) {
-        if ("Aged Brie".equals(item.name)) {
+        if (item.hasName("Aged Brie")) {
             ItemHandler itemHandler = new AgedBrieItemHandler();
             itemHandler.update(item);
-        } else if ("Sulfuras, Hand of Ragnaros".equals(item.name)) {
+        } else if (item.hasName("Sulfuras, Hand of Ragnaros")) {
             ItemHandler itemHandler = new LegendaryItemHandler();
             itemHandler.update(item);
-        } else if ("Backstage passes to a TAFKAL80ETC concert".equals(item.name)) {
+        } else if (item.hasName("Backstage passes to a TAFKAL80ETC concert")) {
             ItemHandler itemHandler = new BackStageItemHandler();
             itemHandler.update(item);
         } else {
