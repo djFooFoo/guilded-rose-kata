@@ -37,4 +37,15 @@ class AgedBrieItemHandlerTest {
 
         assertThat(item.getQuality()).isEqualTo(50);
     }
+
+    @Test
+    void givenSellByDateHasPassedAgedBrieQualityRaisesTwiceAsFast() {
+        Item item = new Item("Aged Brie", 0, 30);
+
+        ItemHandler itemHandler = new AgedBrieItemHandler();
+
+        itemHandler.update(item);
+
+        assertThat(item.getQuality()).isEqualTo(32);
+    }
 }
