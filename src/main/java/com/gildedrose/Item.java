@@ -14,8 +14,24 @@ public class Item {
         this.quality = quality;
     }
 
-   @Override
-   public String toString() {
+    void incrementQuality() {
+        this.quality += 1;
+    }
+
+    void decrementQuality() {
+        this.quality -= 1;
+    }
+
+    void resetQuality() {
+        this.quality = 0;
+    }
+
+    public int getQuality() {
+        return this.quality;
+    }
+
+    @Override
+    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 }
