@@ -11,9 +11,9 @@ class LegendaryItemHandlerTest {
 
         ItemHandler itemHandler = new LegendaryItemHandler();
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getSellIn()).isEqualTo(19);
+        assertThat(item.sellIn).isEqualTo(19);
     }
 
     @Test
@@ -22,8 +22,8 @@ class LegendaryItemHandlerTest {
 
         ItemHandler itemHandler = new LegendaryItemHandler();
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getQuality()).isEqualTo(80);
+        assertThat(item.quality).isEqualTo(80);
     }
 }

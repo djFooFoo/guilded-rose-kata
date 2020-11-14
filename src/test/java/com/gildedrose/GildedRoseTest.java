@@ -16,11 +16,11 @@ class GildedRoseTest {
 
         app.updateItems();
 
-        Item item1 = app.getItem(0);
-        assertThat(item1.getQuality()).isEqualTo(1);
-        assertThat(item1.getSellIn()).isEqualTo(0);
-        Item item2 = app.getItem(1);
-        assertThat(item2.getQuality()).isEqualTo(3);
-        assertThat(item2.getSellIn()).isEqualTo(2);
+        Item item1 = app.items[0];
+        assertThat(item1.quality).isEqualTo(1);
+        assertThat(item1.sellIn).isEqualTo(0);
+        Item item2 = app.items[1];
+        assertThat(item2.quality).isEqualTo(3);
+        assertThat(item2.sellIn).isEqualTo(2);
     }
 }

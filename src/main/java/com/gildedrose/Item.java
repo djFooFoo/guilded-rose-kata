@@ -2,48 +2,16 @@ package com.gildedrose;
 
 public class Item {
 
-    private final String name;
+    public String name;
 
-    private int sellIn;
+    public int sellIn;
 
-    private int quality;
+    public int quality;
 
     public Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
-    }
-
-    void incrementQuality() {
-        this.quality += 1;
-    }
-
-    void decrementQuality() {
-        this.quality -= 1;
-    }
-
-    void dropQualityToZero() {
-        this.quality = 0;
-    }
-
-    public int getQuality() {
-        return this.quality;
-    }
-
-    public int getSellIn() {
-        return this.sellIn;
-    }
-
-    public boolean sellByDateHasPassed() {
-        return this.sellIn < 0;
-    }
-
-    public boolean hasName(String name) {
-        return name.equals(this.name);
-    }
-
-    void decrementSellIn() {
-        this.sellIn -= 1;
     }
 
     @Override

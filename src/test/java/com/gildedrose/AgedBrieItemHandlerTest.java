@@ -11,9 +11,9 @@ class AgedBrieItemHandlerTest {
 
         ItemHandler itemHandler = new AgedBrieItemHandler();
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getSellIn()).isEqualTo(18);
+        assertThat(item.sellIn).isEqualTo(18);
     }
 
     @Test
@@ -22,9 +22,9 @@ class AgedBrieItemHandlerTest {
 
         ItemHandler itemHandler = new AgedBrieItemHandler();
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getQuality()).isEqualTo(41);
+        assertThat(item.quality).isEqualTo(41);
     }
 
     @Test
@@ -33,9 +33,9 @@ class AgedBrieItemHandlerTest {
 
         ItemHandler itemHandler = new AgedBrieItemHandler();
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getQuality()).isEqualTo(50);
+        assertThat(item.quality).isEqualTo(50);
     }
 
     @Test
@@ -44,8 +44,8 @@ class AgedBrieItemHandlerTest {
 
         ItemHandler itemHandler = new AgedBrieItemHandler();
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getQuality()).isEqualTo(32);
+        assertThat(item.quality).isEqualTo(32);
     }
 }

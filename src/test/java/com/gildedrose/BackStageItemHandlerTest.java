@@ -11,9 +11,9 @@ class BackStageItemHandlerTest {
 
         ItemHandler itemHandler = new BackStageItemHandler();
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getSellIn()).isEqualTo(18);
+        assertThat(item.sellIn).isEqualTo(18);
     }
 
     @Test
@@ -21,9 +21,9 @@ class BackStageItemHandlerTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 19, 22);
         ItemHandler itemHandler = new BackStageItemHandler();
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getQuality()).isEqualTo(23);
+        assertThat(item.quality).isEqualTo(23);
     }
 
     @Test
@@ -31,9 +31,9 @@ class BackStageItemHandlerTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 22);
         ItemHandler itemHandler = new BackStageItemHandler();
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getQuality()).isEqualTo(24);
+        assertThat(item.quality).isEqualTo(24);
     }
 
     @Test
@@ -41,9 +41,9 @@ class BackStageItemHandlerTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 22);
         ItemHandler itemHandler = new BackStageItemHandler();
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getQuality()).isEqualTo(25);
+        assertThat(item.quality).isEqualTo(25);
     }
 
     @Test
@@ -51,9 +51,9 @@ class BackStageItemHandlerTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 22);
         ItemHandler itemHandler = new BackStageItemHandler();
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getQuality()).isEqualTo(0);
+        assertThat(item.quality).isEqualTo(0);
     }
 
     @Test
@@ -61,8 +61,8 @@ class BackStageItemHandlerTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 2, 50);
         ItemHandler itemHandler = new BackStageItemHandler();
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getQuality()).isEqualTo(50);
+        assertThat(item.quality).isEqualTo(50);
     }
 }

@@ -11,9 +11,9 @@ class ItemHandlerTest {
 
         ItemHandler itemHandler = new ItemHandler(){};
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getSellIn()).isEqualTo(18);
+        assertThat(item.sellIn).isEqualTo(18);
     }
 
     @Test
@@ -22,9 +22,9 @@ class ItemHandlerTest {
 
         ItemHandler itemHandler = new ItemHandler(){};
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getQuality()).isEqualTo(21);
+        assertThat(item.quality).isEqualTo(21);
     }
 
     @Test
@@ -33,9 +33,9 @@ class ItemHandlerTest {
 
         ItemHandler itemHandler = new ItemHandler(){};
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getQuality()).isEqualTo(20);
+        assertThat(item.quality).isEqualTo(20);
     }
 
     @Test
@@ -44,8 +44,8 @@ class ItemHandlerTest {
 
         ItemHandler itemHandler = new ItemHandler(){};
 
-        itemHandler.update(item);
+        itemHandler.execute(new UpdateItemCommand(item));
 
-        assertThat(item.getQuality()).isEqualTo(0);
+        assertThat(item.quality).isEqualTo(0);
     }
 }

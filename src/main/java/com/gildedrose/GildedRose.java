@@ -1,14 +1,10 @@
 package com.gildedrose;
 
 class GildedRose {
-    private final Item[] items;
+    public Item[] items;
 
     public GildedRose(Item[] items) {
         this.items = items;
-    }
-
-    public Item getItem(int zeroBasedIndex) {
-        return items[zeroBasedIndex];
     }
 
     public void updateItems() {
@@ -18,18 +14,22 @@ class GildedRose {
     }
 
     public void updateItem(Item item) {
-        if (item.hasName("Aged Brie")) {
+        if ("Aged Brie".equals(item.name)) {
             ItemHandler itemHandler = new AgedBrieItemHandler();
-            itemHandler.update(item);
-        } else if (item.hasName("Sulfuras, Hand of Ragnaros")) {
+            UpdateItemCommand itemDecorator = new UpdateItemCommand(item);
+            itemHandler.execute(itemDecorator);
+        } else if ("Sulfuras, Hand of Ragnaros".equals(item.name)) {
             ItemHandler itemHandler = new LegendaryItemHandler();
-            itemHandler.update(item);
-        } else if (item.hasName("Backstage passes to a TAFKAL80ETC concert")) {
+            UpdateItemCommand itemDecorator = new UpdateItemCommand(item);
+            itemHandler.execute(itemDecorator);
+        } else if ("Backstage passes to a TAFKAL80ETC concert".equals(item.name)) {
             ItemHandler itemHandler = new BackStageItemHandler();
-            itemHandler.update(item);
+            UpdateItemCommand itemDecorator = new UpdateItemCommand(item);
+            itemHandler.execute(itemDecorator);
         } else {
             ItemHandler itemHandler = new ItemHandler() {};
-            itemHandler.update(item);
+            UpdateItemCommand itemDecorator = new UpdateItemCommand(item);
+            itemHandler.execute(itemDecorator);
         }
     }
 }

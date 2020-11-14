@@ -2,23 +2,23 @@ package com.gildedrose;
 
 public class BackStageItemHandler implements ItemHandler {
     @Override
-    public void updateQuality(Item item) {
-        raiseQuality(item);
+    public void updateQuality(UpdateItemCommand updateItemCommand) {
+        raiseQuality(updateItemCommand);
 
-        if (item.getSellIn() <= 10) {
-            raiseQuality(item);
+        if (updateItemCommand.getSellIn() <= 10) {
+            raiseQuality(updateItemCommand);
         }
 
-        if (item.getSellIn() <= 5) {
-            raiseQuality(item);
+        if (updateItemCommand.getSellIn() <= 5) {
+            raiseQuality(updateItemCommand);
         }
 
-        if (item.sellByDateHasPassed()){
-            item.dropQualityToZero();
+        if (updateItemCommand.sellByDateHasPassed()){
+            updateItemCommand.dropQualityToZero();
         }
     }
 
-    private void raiseQuality(Item item) {
+    private void raiseQuality(UpdateItemCommand item) {
         if (item.getQuality() < 50) {
             item.incrementQuality();
         }

@@ -2,15 +2,15 @@ package com.gildedrose;
 
 public class AgedBrieItemHandler implements ItemHandler {
     @Override
-    public void updateQuality(Item item) {
-        raiseQuality(item);
+    public void updateQuality(UpdateItemCommand updateItemCommand) {
+        raiseQuality(updateItemCommand);
 
-        if(item.sellByDateHasPassed()){
-            raiseQuality(item);
+        if(updateItemCommand.sellByDateHasPassed()){
+            raiseQuality(updateItemCommand);
         }
     }
 
-    private void raiseQuality(Item item) {
+    private void raiseQuality(UpdateItemCommand item) {
         if (item.getQuality() < 50) {
             item.incrementQuality();
         }

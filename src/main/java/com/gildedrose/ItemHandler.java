@@ -1,25 +1,25 @@
 package com.gildedrose;
 
 public interface ItemHandler {
-    default void updateSellIn(Item item) {
-        item.decrementSellIn();
+    default void updateSellIn(UpdateItemCommand updateItemCommand) {
+        updateItemCommand.decrementSellIn();
     }
 
-    default void updateQuality(Item item) {
-        decreaseQuality(item);
-        if (item.sellByDateHasPassed()) {
-            decreaseQuality(item);
+    default void updateQuality(UpdateItemCommand updateItemCommand) {
+        decreaseQuality(updateItemCommand);
+        if (updateItemCommand.sellByDateHasPassed()) {
+            decreaseQuality(updateItemCommand);
         }
     }
 
-    default void update(Item item) {
-        updateSellIn(item);
-        updateQuality(item);
+    default void execute(UpdateItemCommand updateItemCommand) {
+        updateSellIn(updateItemCommand);
+        updateQuality(updateItemCommand);
     }
 
-    private void decreaseQuality(Item item) {
-        if (item.getQuality() > 0) {
-            item.decrementQuality();
+    private void decreaseQuality(UpdateItemCommand updateItemCommand) {
+        if (updateItemCommand.getQuality() > 0) {
+            updateItemCommand.decrementQuality();
         }
     }
 }
