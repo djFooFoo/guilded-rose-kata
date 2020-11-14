@@ -13,7 +13,7 @@ class AgedBrieItemHandlerTest {
 
         itemHandler.update(item);
 
-        assertThat(item.sellIn).isEqualTo(18);
+        assertThat(item.getSellIn()).isEqualTo(18);
     }
 
     @Test

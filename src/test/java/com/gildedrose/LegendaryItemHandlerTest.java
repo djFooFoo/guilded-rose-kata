@@ -13,7 +13,7 @@ class LegendaryItemHandlerTest {
 
         itemHandler.update(item);
 
-        assertThat(item.sellIn).isEqualTo(19);
+        assertThat(item.getSellIn()).isEqualTo(19);
     }
 
     @Test
