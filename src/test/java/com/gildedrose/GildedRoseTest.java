@@ -93,4 +93,32 @@ class GildedRoseTest {
         Item item = app.getItem(0);
         assertThat(item.sellIn).isEqualTo(22);
     }
+
+    @Test
+    void legendaryItemSellInDoesNotChange() {
+        Item[] items = new Item[] {
+                new Item("Sulfuras, Hand of Ragnaros", 23, 80)
+        };
+
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        Item item = app.getItem(0);
+        assertThat(item.sellIn).isEqualTo(23);
+    }
+
+    @Test
+    void legendaryItemQualityDoesNotChange() {
+        Item[] items = new Item[] {
+                new Item("Sulfuras, Hand of Ragnaros", 23, 80)
+        };
+
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        Item item = app.getItem(0);
+        assertThat(item.quality).isEqualTo(80);
+    }
 }
