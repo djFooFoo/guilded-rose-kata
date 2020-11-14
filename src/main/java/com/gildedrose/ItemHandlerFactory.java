@@ -1,9 +1,6 @@
 package com.gildedrose;
 
-import com.gildedrose.handler.AgedBrieItemHandler;
-import com.gildedrose.handler.BackStageItemHandler;
-import com.gildedrose.handler.ItemHandler;
-import com.gildedrose.handler.LegendaryItemHandler;
+import com.gildedrose.handler.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,6 +18,7 @@ public class ItemHandlerFactory {
         ITEM_HANDLERS.put("Aged Brie", new AgedBrieItemHandler());
         ITEM_HANDLERS.put("Backstage passes to a TAFKAL80ETC concert", new BackStageItemHandler());
         ITEM_HANDLERS.put("Sulfuras, Hand of Ragnaros", new LegendaryItemHandler());
+        ITEM_HANDLERS.put("Conjured Mana Cake", new ConjuredItemHandler());
     }
 
     public static ItemHandler getItemHandlerForName(String name) {

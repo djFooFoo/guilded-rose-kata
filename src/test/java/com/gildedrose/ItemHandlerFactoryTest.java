@@ -1,9 +1,6 @@
 package com.gildedrose;
 
-import com.gildedrose.handler.AgedBrieItemHandler;
-import com.gildedrose.handler.BackStageItemHandler;
-import com.gildedrose.handler.ItemHandler;
-import com.gildedrose.handler.LegendaryItemHandler;
+import com.gildedrose.handler.*;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -28,6 +25,13 @@ class ItemHandlerFactoryTest {
         ItemHandler itemHandler = ItemHandlerFactory.getItemHandlerForName("Sulfuras, Hand of Ragnaros");
 
         assertThat(itemHandler).isInstanceOf(LegendaryItemHandler.class);
+    }
+
+    @Test
+    public void givenConjuredManaCakeGivesConjuredItemHandler() {
+        ItemHandler itemHandler = ItemHandlerFactory.getItemHandlerForName("Conjured Mana Cake");
+
+        assertThat(itemHandler).isInstanceOf(ConjuredItemHandler.class);
     }
 
     @Test
