@@ -7,8 +7,10 @@ public class UpdateItemCommand {
         this.item = item;
     }
 
-    public void incrementQuality() {
-        item.quality++;
+    public void raiseQuality() {
+        if(item.quality < 50){
+            item.quality++;
+        }
     }
 
     public void decrementQuality() {

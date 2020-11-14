@@ -12,7 +12,7 @@ public class UpdateItemCommandTest {
 
         UpdateItemCommand updateItemCommand = new UpdateItemCommand(item);
 
-        updateItemCommand.incrementQuality();
+        updateItemCommand.raiseQuality();
 
         assertThat(item.quality).isEqualTo(1);
     }
@@ -59,11 +59,21 @@ public class UpdateItemCommandTest {
 
     @Test
     void dropQualityToZeroMakesQualityZero() {
-        Item item = new Item("bla", 0, 90);
+        Item item = new Item("bla", 0, 40);
 
         UpdateItemCommand updateItemCommand = new UpdateItemCommand(item);
         updateItemCommand.dropQualityToZero();
 
         assertThat(item.quality).isEqualTo(0);
+    }
+
+    @Test
+    void qualityOfAnItemIsNeverMoreThan50() {
+        Item item = new Item("bla", 0, 50);
+
+        UpdateItemCommand updateItemCommand = new UpdateItemCommand(item);
+        updateItemCommand.raiseQuality();
+
+        assertThat(item.quality).isEqualTo(50);
     }
 }
