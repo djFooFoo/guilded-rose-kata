@@ -8,13 +8,13 @@ public class UpdateItemCommand {
     }
 
     public void raiseQuality() {
-        if(item.quality < 50){
+        if (item.quality < 50) {
             item.quality++;
         }
     }
 
     public void lowerQuality() {
-        if(item.quality > 0){
+        if (item.quality > 0) {
             item.quality--;
         }
     }

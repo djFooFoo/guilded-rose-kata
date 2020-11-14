@@ -15,7 +15,7 @@ public class BackStageItemHandler implements ItemHandler {
             updateItemCommand.raiseQuality();
         }
 
-        if (updateItemCommand.sellInDateHasPassed()){
+        if (updateItemCommand.sellInDateHasPassed()) {
             updateItemCommand.dropQualityToZero();
         }
     }

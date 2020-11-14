@@ -11,7 +11,8 @@ class ItemHandlerTest {
     void givenItemSellInValueDecrements() {
         Item item = new Item("an item", 19, 22);
 
-        ItemHandler itemHandler = new ItemHandler(){};
+        ItemHandler itemHandler = new ItemHandler() {
+        };
 
         itemHandler.execute(new UpdateItemCommand(item));
 
@@ -22,7 +23,8 @@ class ItemHandlerTest {
     void givenItemQualityDecreases() {
         Item item = new Item("an item", 19, 22);
 
-        ItemHandler itemHandler = new ItemHandler(){};
+        ItemHandler itemHandler = new ItemHandler() {
+        };
 
         itemHandler.execute(new UpdateItemCommand(item));
 
@@ -33,7 +35,8 @@ class ItemHandlerTest {
     void givenItemQualityAndSellByDateHasPassedDecreasesTwiceAsFast() {
         Item item = new Item("an item", -1, 22);
 
-        ItemHandler itemHandler = new ItemHandler(){};
+        ItemHandler itemHandler = new ItemHandler() {
+        };
 
         itemHandler.execute(new UpdateItemCommand(item));
 
@@ -44,7 +47,8 @@ class ItemHandlerTest {
     void givenItemQualityDecreasesNeverBelowZero() {
         Item item = new Item("an item", -1, 0);
 
-        ItemHandler itemHandler = new ItemHandler(){};
+        ItemHandler itemHandler = new ItemHandler() {
+        };
 
         itemHandler.execute(new UpdateItemCommand(item));
 

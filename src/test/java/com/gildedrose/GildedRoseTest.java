@@ -8,7 +8,7 @@ class GildedRoseTest {
 
     @Test
     void updatesMultipleItems() {
-        Item[] items = new Item[] {
+        Item[] items = new Item[]{
                 new Item("item1", 1, 2),
                 new Item("item2", 3, 4)
         };

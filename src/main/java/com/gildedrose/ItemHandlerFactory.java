@@ -10,10 +10,12 @@ import java.util.Map;
 
 public class ItemHandlerFactory {
 
-    private static final ItemHandler DEFAULT_ITEM_HANDLER = new ItemHandler(){};
+    private static final ItemHandler DEFAULT_ITEM_HANDLER = new ItemHandler() {
+    };
     private static final Map<String, ItemHandler> ITEM_HANDLERS = new HashMap<>();
 
-    private ItemHandlerFactory() { }
+    private ItemHandlerFactory() {
+    }
 
     static {
         ITEM_HANDLERS.put("Aged Brie", new AgedBrieItemHandler());
@@ -21,7 +23,7 @@ public class ItemHandlerFactory {
         ITEM_HANDLERS.put("Sulfuras, Hand of Ragnaros", new LegendaryItemHandler());
     }
 
-    public static ItemHandler getItemHandlerForName(String name){
+    public static ItemHandler getItemHandlerForName(String name) {
         return ITEM_HANDLERS.getOrDefault(name, DEFAULT_ITEM_HANDLER);
     }
 }

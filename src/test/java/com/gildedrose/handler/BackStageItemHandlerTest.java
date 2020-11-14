@@ -59,7 +59,7 @@ class BackStageItemHandlerTest {
     }
 
     @Test
-    void givenBackStagePassQualityNeverRaisesAbove50(){
+    void givenBackStagePassQualityNeverRaisesAbove50() {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 2, 50);
         ItemHandler itemHandler = new BackStageItemHandler();
 
